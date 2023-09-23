@@ -11,7 +11,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { BiLogOut } from "react-icons/bi";
+import { useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { LOGIN_ROUTE } from "../constants/routes";
 
 const drawerWidth = 240;
 
@@ -20,6 +22,7 @@ const Appbar = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { window } = props;
 
@@ -58,7 +61,8 @@ const Appbar = (props) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/login");
+    navigate(LOGIN_ROUTE);
+    queryClient.removeQueries();
   };
 
   return (

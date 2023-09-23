@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { HOME_ROUTE, LOGIN_ROUTE } from "../constants/routes";
 
 const GuestGuard = (props) => {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -11,11 +12,11 @@ const GuestGuard = (props) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/home", { replace: true });
+      navigate(HOME_ROUTE, { replace: true });
     }
 
     if (!isLoggedIn && pathname === "/") {
-      navigate("/login", { replace: true });
+      navigate(LOGIN_ROUTE, { replace: true });
     }
   }, [isLoggedIn, navigate, pathname]);
 

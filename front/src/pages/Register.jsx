@@ -30,6 +30,7 @@ import {
   openErrorSnackbar,
   openSuccessSnackbar,
 } from "../store/slice/snackbarSlice";
+import { LOGIN_ROUTE, REGISTER_ROUTE } from "../constants/routes";
 
 // ===========================|| FIREBASE - REGISTER ||=========================== //
 
@@ -52,7 +53,7 @@ const Register = () => {
     mutationKey: ["register"],
     mutationFn: (values) => registerUser(values),
     onSuccess: (res) => {
-      navigate("/login");
+      navigate(LOGIN_ROUTE);
       dispatch(openSuccessSnackbar(res?.data?.message));
     },
     onError: (error) => {
@@ -210,7 +211,7 @@ const Register = () => {
                 >
                   Sign up
                 </Button>
-                <Link to="/login">Already registered? Login</Link>
+                <Link to={LOGIN_ROUTE}>Already registered? Login</Link>
               </Box>
             </Box>
           </form>

@@ -1,2 +1,5 @@
 *.env
 settings.json
+
+todo-api/node_modules/
+front/node_modules

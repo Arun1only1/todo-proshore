@@ -1,6 +1,7 @@
 import Home from "../pages/Home";
 import AuthGuard from "../guard/AuthGuard";
 import MainLayout from "../layout/MainLayout";
+import { HOME } from "../constants/routes";
 
 export const mainRoutes = [
   {
@@ -12,7 +13,7 @@ export const mainRoutes = [
     ),
     children: [
       {
-        path: "home",
+        path: HOME,
         element: <Home />,
       },
     ],

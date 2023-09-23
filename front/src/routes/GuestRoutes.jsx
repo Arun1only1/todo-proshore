@@ -1,3 +1,4 @@
+import { LOGIN, REGISTER } from "../constants/routes";
 import GuestGuard from "../guard/GuestGuard";
 import MinimumLayout from "../layout/MinimumLayout";
 import Login from "../pages/Login";
@@ -13,11 +14,11 @@ export const guestRoutes = [
     ),
     children: [
       {
-        path: "login",
+        path: LOGIN,
         element: <Login />,
       },
       {
-        path: "register",
+        path: REGISTER,
         element: <Register />,
       },
     ],

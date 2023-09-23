@@ -30,6 +30,7 @@ import {
 } from "../store/slice/snackbarSlice";
 
 import { loginUser } from "../lib/apis/user.api";
+import { HOME_ROUTE, REGISTER_ROUTE } from "../constants/routes";
 // ===========================|| FIREBASE - REGISTER ||=========================== //
 
 const Login = () => {
@@ -50,7 +51,7 @@ const Login = () => {
       localStorage.setItem("firstName", res?.data?.user?.firstName);
       localStorage.setItem("isLoggedIn", true);
 
-      navigate("/home");
+      navigate(HOME_ROUTE, { replace: true });
 
       dispatch(openSuccessSnackbar("You are logged in successfully."));
     },
@@ -172,7 +173,9 @@ const Login = () => {
                 >
                   Sign in
                 </Button>
-                <Link to="/register">{`Don't have account? Register`}</Link>
+                <Link
+                  to={REGISTER_ROUTE}
+                >{`Don't have account? Register`}</Link>
               </Box>
             </Box>
           </form>
