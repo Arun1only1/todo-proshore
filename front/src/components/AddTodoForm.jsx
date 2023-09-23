@@ -52,7 +52,7 @@ const AddTodoForm = () => {
 
         description: Yup.string()
           .min(3, "Description must be at least 3 characters.")
-          .max(100, "Description must be at most 100 characters.")
+          .max(40, "Description must be at most 40 characters.")
           .trim()
           .required("Description is required."),
 
