@@ -46,7 +46,11 @@ const TodoCard = ({ _id, name, description, isCompleted, relativeTime }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        height: "25vh",
+        height: {
+          xs: "auto",
+          sm: "30vh",
+          md: "25vh",
+        },
         padding: "1rem",
         boxShadow:
           " rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
