@@ -52,7 +52,7 @@ const HomeTabs = () => {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Todo task" {...a11yProps(0)} />
+          <Tab label="Upcoming task" {...a11yProps(0)} />
           <Tab label="Completed task" {...a11yProps(1)} />
           <Tab label="All task" {...a11yProps(2)} />
         </Tabs>
