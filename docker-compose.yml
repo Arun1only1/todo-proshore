@@ -8,12 +8,12 @@ services:
     volumes:
       - .:/app
     environment:
-      - API_PORT=8000
-      - MONGO_URL=mongodb+srv://arun:arun2nly2@school.b6qkdnb.mongodb.net/todo-app?retryWrites=true&w=majority
-      - JWT_ACCESS_TOKEN_SECRET=4df499e80fe326798be9571109d3e94ed0caa005da622a655a81ae7c91e46f657d0e0d713b3620548aeec6acb937de832298d15a48dfde62f047cde85207db08
-      - JWT_ACCESS_TOKEN_EXPIRES_IN=10m
-      - JWT_REFRESH_TOKEN_SECRET=3ad4f64144448df56e3f2f8501b2c44600647bf682fa6ac0e48ea188704d353374a8aea071616b1ba61849605a6a772d18c5d138f117db5d8e78fa535b24a8dd
-      - JWT_REFRESH_TOKEN_EXPIRES_IN=7d
+      - API_PORT=some_value_here
+      - MONGO_URL=some_value_here
+      - JWT_ACCESS_TOKEN_SECRET=some_value_here
+      - JWT_ACCESS_TOKEN_EXPIRES_IN=some_value_here
+      - JWT_REFRESH_TOKEN_SECRET=some_value_here
+      - JWT_REFRESH_TOKEN_EXPIRES_IN=some_value_here
     networks:
       - mynetwork
 
