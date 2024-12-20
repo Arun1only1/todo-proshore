@@ -7,12 +7,12 @@ services:
     volumes:
       - ./todo-api:/app
     environment:
-      - API_PORT=8000
-      - MONGO_URL=mongodb+srv://arun:arun1234@school.b6qkdnb.mongodb.net/?retryWrites=true& CLERAw=majority&appName=School
-      - JWT_ACCESS_TOKEN_SECRET=ajafdkdkadfa
-      - JWT_ACCESS_TOKEN_EXPIRES_IN=10m
-      - JWT_REFRESH_TOKEN_SECRET=fdaadadadf
-      - JWT_REFRESH_TOKEN_EXPIRES_IN=60m
+      - API_PORT=some value here
+      - MONGO_URL=some value here
+      - JWT_ACCESS_TOKEN_SECRET=some value here
+      - JWT_ACCESS_TOKEN_EXPIRES_IN=some value here
+      - JWT_REFRESH_TOKEN_SECRET=some value here
+      - JWT_REFRESH_TOKEN_EXPIRES_IN=some value here
     networks:
       - mynetwork
 
