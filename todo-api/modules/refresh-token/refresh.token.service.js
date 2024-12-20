@@ -1,8 +1,9 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
-import User from "../user/user.entity.js";
-import { generateToken } from "../../utils/generate.token.js";
-import { ACCESS_TOKEN } from "../../constants/general.constant.js";
+import User from '../user/user.entity.js';
+import { generateToken } from '../../utils/generate.token.js';
+import { ACCESS_TOKEN } from '../../constants/general.constant.js';
+import Lang from '../../constants/language.js';
 
 export const getNewAccessToken = async (req, res) => {
   try {

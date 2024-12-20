@@ -1,4 +1,3 @@
-version: "3"
 services:
   backend:
     build:
@@ -6,25 +5,26 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - .:/app
+      - ./todo-api:/app
     environment:
-      - API_PORT=some_value_here
-      - MONGO_URL=some_value_here
-      - JWT_ACCESS_TOKEN_SECRET=some_value_here
-      - JWT_ACCESS_TOKEN_EXPIRES_IN=some_value_here
-      - JWT_REFRESH_TOKEN_SECRET=some_value_here
-      - JWT_REFRESH_TOKEN_EXPIRES_IN=some_value_here
+      - API_PORT=8000
+      - MONGO_URL=mongodb+srv://arun:arun1234@school.b6qkdnb.mongodb.net/?retryWrites=true& CLERAw=majority&appName=School
+      - JWT_ACCESS_TOKEN_SECRET=ajafdkdkadfa
+      - JWT_ACCESS_TOKEN_EXPIRES_IN=10m
+      - JWT_REFRESH_TOKEN_SECRET=fdaadadadf
+      - JWT_REFRESH_TOKEN_EXPIRES_IN=60m
     networks:
       - mynetwork
 
   frontend:
     build:
       context: ./front
-
     ports:
       - 3000:80
     networks:
       - mynetwork
+    depends_on:
+      - backend
 
 networks:
   mynetwork:

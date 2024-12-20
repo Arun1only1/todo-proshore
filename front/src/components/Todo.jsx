@@ -1,15 +1,15 @@
-import { Box, Grid, Pagination } from "@mui/material";
-import React from "react";
-import { useQuery } from "react-query";
-import { useDispatch, useSelector } from "react-redux";
-import { DEFAULT_LIMIT } from "../constants/general.constant";
-import { getTodos } from "../lib/apis/todo.api";
-import { openErrorSnackbar } from "../store/slice/snackbarSlice";
-import { setPage } from "../store/slice/todoSlice";
-import AddTodoDialog from "./AddTodoDialog";
-import Loader from "./Loader";
-import NoTaskFound from "./NoTaskFound";
-import TodoCard from "./TodoCard";
+import { Box, Grid, Pagination } from '@mui/material';
+import React from 'react';
+import { useQuery } from 'react-query';
+import { useDispatch, useSelector } from 'react-redux';
+import { DEFAULT_LIMIT } from '../constants/general.constant';
+import { getTodos } from '../lib/apis/todo.api';
+import { openErrorSnackbar } from '../store/slice/snackbarSlice';
+import { setPage } from '../store/slice/todoSlice';
+import AddTodoDialog from './AddTodoDialog';
+import Loader from './Loader';
+import NoTaskFound from './NoTaskFound';
+import TodoCard from './TodoCard';
 
 const Todo = ({ isCompleted }) => {
   const { page } = useSelector((state) => state.todo);
@@ -18,7 +18,7 @@ const Todo = ({ isCompleted }) => {
   const dispatch = useDispatch();
 
   const { data, error, isLoading, isError } = useQuery({
-    queryKey: ["todos", page],
+    queryKey: ['todos', page, isCompleted],
     queryFn: () =>
       getTodos({
         page,
@@ -41,11 +41,11 @@ const Todo = ({ isCompleted }) => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <AddTodoDialog />
@@ -55,12 +55,12 @@ const Todo = ({ isCompleted }) => {
         <Grid
           container
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "1rem",
-            minHeight: "60vh",
-            mb: "2rem",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '1rem',
+            minHeight: '60vh',
+            mb: '2rem',
           }}
         >
           {todoData?.map((item) => {
@@ -77,7 +77,7 @@ const Todo = ({ isCompleted }) => {
         <Pagination
           page={page}
           count={totalPage}
-          color="secondary"
+          color='secondary'
           onChange={(_, value) => {
             dispatch(setPage(value));
           }}

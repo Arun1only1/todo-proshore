@@ -1,18 +1,18 @@
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
-import PropTypes from "prop-types";
-import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setTab } from "../store/slice/todoSlice";
-import Todo from "../components/Todo";
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTab } from '../store/slice/todoSlice';
+import Todo from '../components/Todo';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <Box
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -32,7 +32,7 @@ CustomTabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 const HomeTabs = () => {
@@ -45,16 +45,16 @@ const HomeTabs = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
           value={tab}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          aria-label='basic tabs example'
         >
-          <Tab label="Upcoming task" {...a11yProps(0)} />
-          <Tab label="Completed task" {...a11yProps(1)} />
-          <Tab label="All task" {...a11yProps(2)} />
+          <Tab label='Upcoming task' {...a11yProps(0)} />
+          <Tab label='Done task' {...a11yProps(1)} />
+          <Tab label='All task' {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={tab} index={0}>

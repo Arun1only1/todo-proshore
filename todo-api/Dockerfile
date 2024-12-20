@@ -1,5 +1,5 @@
 # Use the official Node.js 18 Alpine base image
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Install Tini for process management
 RUN apk add --update tini
